@@ -20,6 +20,8 @@ class FandomLeague(scrapy.Spider):
         'CONCURRENT_REQUESTS': 1,
         'ROBOTSTXT_OBEY': True
     }
+    # initialyy a parse function was assing and a function will follow a different url, however, as some years/seasons the page changed its structure, it was way easier
+    # to just apply a request individually and review if the extracted the information as intended
 
     def start_requests(self):
         yield scrapy.Request('https://lol.fandom.com/wiki/LEC/2020_Season/Spring_Season', self.parse_2020)
